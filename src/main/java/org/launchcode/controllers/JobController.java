@@ -9,8 +9,8 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.launchcode.models.*;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.ModelAttribute;
+//import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.validation.Valid;
 
@@ -53,23 +53,25 @@ public class JobController {
         return "new-job";
     }
 
-    Job newJob = new Job();
 
-    String jobName = jobForm.getName();
-    Employer jobEmployer = jobData.getEmployers().findById(jobForm.getEmployerId());
-    Location jobLocation = jobData.getLocations().findById(jobForm.getLocationId());
-    CoreCompetency jobCoreCompetency = jobData.getCoreCompetencies().findById(jobForm.getCoreCompetencyId());
-    PositionType jobPositionType = jobData.getPositionTypes().findById(jobForm.getPositionTypeId());
 
+    String aName = jobForm.getName();
+    Employer aEmployer = jobData.getEmployers().findById(jobForm.getEmployerId());
+    Location aLocation = jobData.getLocations().findById(jobForm.getLocationId());
+    CoreCompetency aSkill = jobData.getCoreCompetencies().findById(jobForm.getCoreCompetencyId());
+    PositionType aPositionType = jobData.getPositionTypes().findById(jobForm.getPositionTypeId());
+
+    Job newJob = new Job(aName, aEmployer, aLocation, aPositionType, aSkill);
     jobData.add(newJob);
 
     model.addAttribute("jobs", newJob);
 
     return "redirect:?id="+newJob.getId();
-//        return "";
+
 
 
 
 
     }
+
 }

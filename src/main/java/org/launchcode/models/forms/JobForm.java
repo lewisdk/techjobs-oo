@@ -71,6 +71,7 @@ public class JobForm {
         return employerId;
     }
 
+
     public void setEmployerId(int employerId) {
         this.employerId = employerId;
     }
