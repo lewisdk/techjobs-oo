@@ -12,24 +12,24 @@
     <table th:fragments="single-job" class="job-listing" th:object="${jobData}">
         <tr>
             <td>Name</td>
-            <td th:field="*{name}" th:text="${name}"></td>
+            <td th:field="*{name}" th:text="${job.name}"></td>
         </tr>
 
         <tr>
             <td>Employer</td>
-            <td th:field="*{employer}" th:text="${employer}"></td>
+            <td th:field="*{employer}" th:text="${job.employer}"></td>
         </tr>
         <tr>
             <td>Location</td>
-            <td th:field="*{location}" th:text="${location}"></td>
+            <td th:field="*{location}" th:text="${job.location}"></td>
         </tr>
         <tr>
             <td>Position</td>
-            <td th:field="*{position}" th:text="${position}"></td>
+            <td th:field="*{position}" th:text="${job.position}"></td>
         </tr>
         <tr>
             <td>Skill</td>
-            <td th:field="*{skill}" th:text="${skill}"></td>
+            <td th:field="*{coreCompetency}" th:text="${job.coreCompetency}"></td>
         </tr>
     </table>
 
